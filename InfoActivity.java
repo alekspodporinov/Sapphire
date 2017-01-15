@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.podp.aleks.sapphire.modelTanks.BaseTank;
 import com.podp.aleks.sapphire.modelTanks.TanksFactory;
@@ -37,15 +38,31 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        if (tank == null) {
+            Toast toast = Toast.makeText(
+                    this,
+                    "Что то пошло не так =(",
+                    Toast.LENGTH_LONG);
+            toast.show();
+        }
+        switch (view.getId()) {
             case R.id.calculate:
-                totalTv.setText("В танке " + String.format("%.3f",tank.GetStock(Double.parseDouble(levelEt.getText().toString()))) + " m3");
+                Double level = Double.parseDouble(levelEt.getText().toString());
+                if (level > tank.GetMaxlevel() || level == 0) {
+                    Toast toast = Toast.makeText(
+                            this,
+                            "Уровень введен не верно, уровень не может быть больше -  " + tank.GetMaxlevel() + "м и меньше 0.1м",
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
+                Double stock = tank.GetStock(level);
+                totalTv.setText("В танке " + String.format("%.3f", stock) + " m3");
                 totalTv.setTextSize(40);
         }
     }
 
-    private void InitViews(){
+    private void InitViews() {
         calculateBtn = (Button) findViewById(R.id.calculate);
         totalTv = (TextView) findViewById(R.id.total);
         tankNameTv = (TextView) findViewById(R.id.tankName);

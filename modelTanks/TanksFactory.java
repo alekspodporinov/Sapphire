@@ -24,6 +24,20 @@ public class TanksFactory {
                 return new FuelTank4();
             case "fuelTank6":
                 return new FuelTank6();
+            case "waterTank1":
+                return new WaterTank1();
+            case "waterTank2":
+                return new WaterTank2();
+            case "boilerTank":
+                return new BoilerWaterTank();
+            case "forepeak":
+                return new ForepeakWaterTank();
+            case "afterpeak":
+                return new AfterpeakWaterTank();
+            case "overflowTank":
+                return new OverflowTank();
+            case "pacifierTank":
+                return new PacifierTank();
             default:
                 return null;
         }

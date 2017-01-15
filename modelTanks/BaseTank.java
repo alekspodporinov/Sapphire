@@ -7,6 +7,8 @@ public abstract class BaseTank {
     protected Double capacityTank;
     protected Double deadStock;
     protected Double immeasurableStock;
+    protected Double maxLevelTank;
+    protected Double minLevelTank;
     protected String nameTank;
     protected Map<Double, Double> tankTable;
 
@@ -21,6 +23,10 @@ public abstract class BaseTank {
     public Double GetImmeasurableStock(){
         return immeasurableStock;
     }
+
+    public Double GetMinLevel() { return minLevelTank; }
+
+    public Double GetMaxlevel() { return maxLevelTank; }
 
     public String GetName(){ return nameTank; }
 

@@ -19,7 +19,8 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
     Button fuelTank6;
     Button fuelTank7;
     Button fuelTank8;
-    Button fueloverflowTank;
+    Button fuelOverflowTank;
+    Button fuelPacifierTank;
 
 
     @Override
@@ -32,20 +33,18 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Intent intent;
+        Intent intent = new Intent(this, InfoActivity.class);
+
         switch (view.getId()){
             case R.id.fuelTank1:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank1");
                 startActivity(intent);
                 break;
             case R.id.fuelTank2:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank2");
                 startActivity(intent);
                 break;
             case R.id.fuelTank3:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank3");
                 startActivity(intent);
                 break;
@@ -55,28 +54,27 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.fuelTank5:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank5");
                 startActivity(intent);
                 break;
             case R.id.fuelTank6:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank6");
                 startActivity(intent);
                 break;
             case R.id.fuelTank7:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank7");
                 startActivity(intent);
                 break;
             case R.id.fuelTank8:
-                intent = new Intent(this, InfoActivity.class);
                 intent.putExtra("tank","fuelTank8");
                 startActivity(intent);
                 break;
             case R.id.overflowTank:
-                intent = new Intent(this, InfoActivity.class);
-                intent.putExtra("tank","fueloverflowTank");
+                intent.putExtra("tank","overflowTank");
+                startActivity(intent);
+                break;
+            case R.id.pacifierTank:
+                intent.putExtra("tank","pacifierTank");
                 startActivity(intent);
                 break;
         }
@@ -91,7 +89,8 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
         fuelTank6 = (Button) findViewById(R.id.fuelTank6);
         fuelTank7 = (Button) findViewById(R.id.fuelTank7);
         fuelTank8 = (Button) findViewById(R.id.fuelTank8);
-        fueloverflowTank = (Button) findViewById(R.id.overflowTank);
+        fuelOverflowTank = (Button) findViewById(R.id.overflowTank);
+        fuelPacifierTank = (Button) findViewById(R.id.pacifierTank);
 
         fuelTank1.setOnClickListener(this);
         fuelTank2.setOnClickListener(this);
@@ -101,6 +100,7 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
         fuelTank6.setOnClickListener(this);
         fuelTank7.setOnClickListener(this);
         fuelTank8.setOnClickListener(this);
-        fueloverflowTank.setOnClickListener(this);
+        fuelPacifierTank.setOnClickListener(this);
+        fuelOverflowTank.setOnClickListener(this);
     }
 }
