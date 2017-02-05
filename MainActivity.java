@@ -14,7 +14,7 @@ import com.podp.aleks.sapphire.domestictanks.DomesticActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button fuelTanks;
-    Button oilTanks;
+   /* Button oilTanks;*/
     Button domesticTanks;
     Button bilgeTanks;
 
@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         fuelTanks = (Button) findViewById(R.id.fuelTanks);
-        oilTanks = (Button) findViewById(R.id.oilTanks);
+       /* oilTanks = (Button) findViewById(R.id.oilTanks);*/
         domesticTanks = (Button) findViewById(R.id.domesticTanks);
         bilgeTanks = (Button) findViewById(R.id.bilgeTanks);
 
         fuelTanks.setOnClickListener(this);
-        oilTanks.setOnClickListener(this);
+      /*  oilTanks.setOnClickListener(this);*/
         domesticTanks.setOnClickListener(this);
         bilgeTanks.setOnClickListener(this);
     }
@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, FuelActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.oilTanks:
+         /*   case R.id.oilTanks:
                 intent = new Intent(this, OilActivity.class);
                 startActivity(intent);
-                break;
+                break;*/
             case R.id.domesticTanks:
                 intent = new Intent(this, DomesticActivity.class);
                 startActivity(intent);

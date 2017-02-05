@@ -35,10 +35,8 @@ public abstract class BaseTank {
         if (resCapacity != null)
             return resCapacity;
 
-
         Double maxLevel = 0.0;
         Double minLevel = 0.0;
-
 
         for (Double key : tankTable.keySet()) {
             if (key < level) {

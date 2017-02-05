@@ -22,8 +22,14 @@ public class TanksFactory {
                 return new FuelTank3();
             case "fuelTank4":
                 return new FuelTank4();
+            case "fuelTank5":
+                return new FuelTank5();
             case "fuelTank6":
                 return new FuelTank6();
+            case "fuelTank7":
+                return new FuelTank7();
+            case "fuelTank8":
+                return new FuelTank8();
             case "waterTank1":
                 return new WaterTank1();
             case "waterTank2":
